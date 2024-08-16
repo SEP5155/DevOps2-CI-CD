@@ -1,0 +1,25 @@
+name: manually-written-1st-CI
+
+on:
+ push:
+   branches:
+     - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Copy code from repository to container
+        uses: actions/checkout@v4
+
+      - name: check folder
+        run: pwd
+
+      - name: check folder content
+        run: ls -al
+
+      - name: run script
+        run: |
+          chmod +x ./bash_script.sh
+          ./bash_script.sh
