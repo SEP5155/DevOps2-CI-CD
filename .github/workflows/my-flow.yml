@@ -20,4 +20,6 @@ jobs:
         run: ls -al
 
       - name: run script
-        run: ./bash_script.sh
+        run: |
+          chmod +x ./bash_script.sh
+          ./bash_script.sh
