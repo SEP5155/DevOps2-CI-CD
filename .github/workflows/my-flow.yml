@@ -1,25 +1,27 @@
-name: manually-written-1st-CI
+name: 2nd-manual-attempt
 
 on:
- push:
-   branches:
-     - main
-
+  push:
+    branches:
+      - main
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  creating-mess:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Copy code from repository to container
+      - name: Copy the repository into container
         uses: actions/checkout@v4
 
-      - name: check folder
+      - name: Check the folder
         run: pwd
 
-      - name: check folder content
-        run: ls -al
+      - name: Check content
+        run: |
+          ls -al >> folder_content.txt
+          cat folder_content.txt && ls -al
 
-      - name: run script
+      - name: create folder and files in it via script
         run: |
           chmod +x ./bash_script.sh
-          ./bash_script.sh
+          sh ./bash_script.sh
+              
