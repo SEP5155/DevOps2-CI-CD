@@ -6,7 +6,7 @@ on:
       - main
       - dev
 jobs:
-  creating-mess:
+  Ci-on-Java-for-70points :
     runs-on: ubuntu-latest
 
     steps:
